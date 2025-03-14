@@ -1,26 +1,9 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import {Home} from "./pages/cv_page/Home";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Work in progress...
-        </p>
-        <a
-          className="App-link"
-          href="https://www.linkedin.com/in/thomas-vidori/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Contact me
-        </a>
-      </header>
-    </div>
-  );
+  return <Home />;
 }
 
 export default App;

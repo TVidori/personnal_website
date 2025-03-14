@@ -1,13 +1,140 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root {
+  --primary-color: #942637;
+  --secondary-color: #FFF8F2;
+  --font-normal-color: #262626;
+  --font-size: 16px;
+  --padding: 10px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.primary-bg { background-color: var(--primary-color); }
+.primary-font { color: var(--primary-color); }
+.primary-border { border-color: var(--primary-color); }
+
+.secondary-bg { background-color: var(--secondary-color); }
+.secondary-font { color: var(--secondary-color); }
+.secondary-border { border-color: var(--secondary-color); }
+
+.basic-font { color: var(--font-normal-color);}
+
+.grid-golden-right {@apply grid grid-cols-[38%_62%]}
+.grid-alternative {@apply grid grid-cols-[33%_67%]}
+
+.w-5\/6 {width: 83.33%;}
+.w-6\/7 {width: 85.7%;}
+.w-7\/8 {width: 87.5%;}
+.w-9\/10 {width: 90%;}
+
+@font-face {
+  font-family: "NunitoSans";
+  src: local("NunitoSans"), url("./resources/font_nunito_sans/NunitoSans-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
+
+@font-face {
+  font-family: "NunitoSans";
+  src: local("NunitoSans"), url("./resources/font_nunito_sans/NunitoSans-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "NunitoSans";
+  src: local("NunitoSans"), url("./resources/font_nunito_sans/NunitoSans-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "NunitoSans";
+  src: local("NunitoSans"), url("./resources/font_nunito_sans/NunitoSans-Italic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "NunitoSans";
+  src: local("NunitoSans"), url("./resources/font_nunito_sans/NunitoSans-BoldItalic.ttf") format("truetype");
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Sansita";
+  src: local("Sansita"), url("resources/font_sansita/Sansita-Regular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Sansita";
+  src: local("Sansita"), url("resources/font_sansita/Sansita-Medium.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Sansita";
+  src: local("Sansita"), url("resources/font_sansita/Sansita-Bold.otf") format("opentype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: "Sansita";
+  src: local("Sansita"), url("resources/font_sansita/Sansita-Light.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+
+
+@font-face {
+  font-family: "Flama";
+  src: local("Flama"), url("resources/font_flama/FlamaTrial-Basic.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: "Flama";
+  src: local("Flama"), url("resources/font_flama/FlamaTrial-Semibold.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Flama";
+  src: local("Flama"), url("resources/font_flama/FlamaTrial-Bold.otf") format("opentype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Flama";
+  src: local("Flama"), url("resources/font_flama/FlamaTrial-BasicItalic.otf") format("opentype");
+  font-weight: normal;
+  font-style: italic;
+}
+
+
+@font-face {
+  font-family: "Flama";
+  src: local("Flama"), url("resources/font_flama/FlamaTrial-Light.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+
+
+/*.font-title {@apply font-titleBase tracking-wider}*/
+.font-custom {@apply font-customBase tracking-wide}
+.font-title {@apply font-titleBase font-light tracking-wide}
+.font-subtitle {@apply font-customBase font-semibold tracking-widest}
