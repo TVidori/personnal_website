@@ -21,6 +21,7 @@ export function Home() {
   const contactIconStyle = "mt-[3px] mr-[6px] ";
 
   const lightenJobDescription = true
+  const onlineVersion = true
 
   return (
     <div className="
@@ -49,13 +50,17 @@ export function Home() {
           <LeftTitleBlock text={"CONTACT"}/>
           <LeftContentBlock>
             <div className={contactDivStyle}>
-              {PhoneFillIcon(`${contactIconStyle} mt-[5px]`)} +33 7 XX XX XX XX
+              {PhoneFillIcon(`${contactIconStyle} mt-[5px]`)} {
+              (onlineVersion) ? "+33 7 XX XX XX XX" : "+ 33 7 80 26 06 82"
+              }
             </div>
             <div className={contactDivStyle}>
               {EnvelopeAtFillIcon(contactIconStyle)} thomas.vidori@protonmail.com
             </div>
             <div className={contactDivStyle}>
-              {GeoAltFillIcon(contactIconStyle)} 150 rue Championnet, Paris
+              {GeoAltFillIcon(contactIconStyle)} {
+              (onlineVersion) ? "75018, Paris" : "150 rue Championnet, Paris"
+            }
             </div>
             <div className={contactDivStyle}>
               {PersonVcardFillIcon(contactIconStyle)} French & British
