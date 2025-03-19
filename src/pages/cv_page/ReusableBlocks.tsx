@@ -44,6 +44,18 @@ export function LeftEducationContentBlock({children}: { children: ReactNode }) {
   )
 }
 
+export function LeftHighlight(
+  {children}: {children: ReactNode}
+) {
+  return (
+    <span
+      className="dark-secondary-font font-semibold"
+    >
+      {children}
+    </span>
+  )
+}
+
 export function RightTitleBlock({text}: { text: string }) {
   return (
     <div className="
@@ -56,11 +68,12 @@ export function RightTitleBlock({text}: { text: string }) {
 }
 
 export function RightSubTitleBlock(
-  {position, dates, company, location}: {
+  {position, dates, company, location, stationF}: {
     position: string,
     dates: string,
     company: string,
     location: string,
+    stationF?: boolean,
   }
 ) {
   return (<>
@@ -74,7 +87,19 @@ export function RightSubTitleBlock(
     </div>
     <div className="flex justify-between">
       <div>{company}</div>
-      <div className="my-auto text-sm">{location}</div>
+      {(!stationF) ? (
+        <div className="my-auto text-sm">{location}</div>
+      ) : (
+        <div className="my-auto text-sm flex">
+          Paris, France |
+          <div className="mt-[1px] -mb-[1px] mx-1">
+          <RightHighlight><span className="font-semibold my-auto">
+            Station F
+          </span></RightHighlight></div> - Program Essec
+        </div>
+      )
+      }
+
     </div>
   </>)
 }
@@ -88,7 +113,7 @@ export function RightContentBlock(
   return (
     <div
       className={`
-        basic-font font-custom text-[13px] 
+        basic-font font-custom text-[13px] text-justify
         ${indent ? "ml-2" : ""} ${light ? "font-light" : ""}
       `}
     >
@@ -96,3 +121,19 @@ export function RightContentBlock(
     </div>
   )
 }
+
+export function RightHighlight(
+  {children, header}: {children: ReactNode, header?: boolean}
+) {
+  return (
+    <span
+      className={`
+        primary-font 
+        ${header ? "font-semibold" : "font-normal"}
+      `}
+    >
+      {children}
+    </span>
+  )
+}
+

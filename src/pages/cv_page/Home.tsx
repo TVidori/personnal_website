@@ -1,7 +1,13 @@
 import profilePicture from '../../resources/profile-picture.png';
 import {
-  LeftContentBlock, LeftEducationContentBlock, LeftEducationTitleBlock,
-  LeftTitleBlock, RightContentBlock, RightSubTitleBlock,
+  LeftContentBlock,
+  LeftEducationContentBlock,
+  LeftEducationTitleBlock,
+  LeftHighlight,
+  LeftTitleBlock,
+  RightContentBlock,
+  RightHighlight,
+  RightSubTitleBlock,
   RightTitleBlock
 } from "./ReusableBlocks";
 import {
@@ -18,7 +24,10 @@ import {
 export function Home() {
   const columnStyle = "h-full pt-4 ";
   const contactDivStyle = "flex my-2";
+  const contactDivLinkStyle = "flex mt-2 mb-[7px]";
   const contactIconStyle = "mt-[3px] mr-[6px] ";
+
+  const linkStyle = "border-b-[1px] border-transparent hover:border-white";
 
   const lightenJobDescription = true
   const onlineVersion = true
@@ -69,24 +78,46 @@ export function Home() {
 
           <LeftTitleBlock text={"LINKS"}/>
           <LeftContentBlock>
-            <div className={contactDivStyle}>
-              {Globe2Icon(`${contactIconStyle} mt-[6px]`)} thomas.vidori.pro
+            <div className={contactDivLinkStyle}>
+              {Globe2Icon(`${contactIconStyle} `)} <a
+              href="https://thomas.vidori.pro"
+              className={linkStyle}
+            >
+              thomas.vidori.pro
+            </a>
             </div>
-            <div className={contactDivStyle}>
-              {GitHubIcon(contactIconStyle)} github.com/TVidori
+            <div className={contactDivLinkStyle}>
+              {GitHubIcon(contactIconStyle)} <a
+              href="https://github.com/TVidori"
+              className={linkStyle}
+            >
+              github.com/TVidori
+            </a>
             </div>
-            <div className={contactDivStyle}>
-              {LinkedInIcon(contactIconStyle)} linkedin.com/in/thomas-vidori/
+            <div className={contactDivLinkStyle}>
+              {LinkedInIcon(contactIconStyle)} <a
+              href="https://linkedin.com/in/thomas-vidori/"
+              className={linkStyle}
+            >
+              linkedin.com/in/thomas-vidori/
+            </a>
             </div>
-            <div className={contactDivStyle}>
-              {MediumIcon(contactIconStyle)} medium.com/@thomas.vidori
+            <div className={contactDivLinkStyle}>
+              {MediumIcon(contactIconStyle)} <a
+              href="https://medium.com/@thomas.vidori"
+              className={linkStyle}
+            >
+              medium.com/@thomas.vidori
+            </a>
             </div>
           </LeftContentBlock>
 
           <LeftTitleBlock text={"LANGUAGES"}/>
           <LeftContentBlock>
-            <div className={contactDivStyle}>
-              English: bilingual - 7 years in the UK
+          <div className={contactDivStyle}>
+            {<LeftHighlight>
+              English: bilingual
+            </LeftHighlight>}<span className="ml-1"> - 7 years in the UK</span>
             </div>
             <div className={contactDivStyle}>
               French: native
@@ -97,16 +128,21 @@ export function Home() {
           <LeftTitleBlock text={"TECHNICAL SKILLS"}/>
           <LeftContentBlock>
             <div className={contactDivStyle}>
-              Languages: Python, Typescript, Kotlin
+              <span className="mr-1">Languages: </span>
+              {<LeftHighlight>Python, Typescript</LeftHighlight>}, Kotlin
             </div>
             <div className={contactDivStyle}>
-              Frameworks: FastAPI, React, Django
+              <span className="mr-1">Frameworks: </span>
+              {<LeftHighlight>FastAPI, React</LeftHighlight>}, Django
             </div>
             <div className={contactDivStyle}>
-              Databases: PostGreSQL, MongoDB
+              <span className="mr-1">Databases: </span>
+              {<LeftHighlight>PostGreSQL, MongoDB</LeftHighlight>}
             </div>
             <div className={contactDivStyle}>
-              Cloud: AWS (S3, Glue, Athena), Terraform
+              <span className="mr-1">Cloud: </span>
+              {<LeftHighlight>AWS</LeftHighlight>}
+              <span className="ml-1">(S3, Glue, Athena), Terraform</span>
             </div>
             <div className={contactDivStyle}>
               Other: Ubuntu Server, Nginx, Kafka
@@ -120,7 +156,8 @@ export function Home() {
             diploma={"Msc in Transport Planning and Business Management"}
           />
           <LeftEducationContentBlock>
-            • Distinction and the prize for the best overall student in this MSc
+            • Distinction and the prize for {<LeftHighlight>
+            the best overall student</LeftHighlight>} in this MSc
           </LeftEducationContentBlock>
 
           <LeftEducationTitleBlock
@@ -129,7 +166,7 @@ export function Home() {
             diploma={"Engineering Degree in Civil Engineering"}
           />
           <LeftEducationContentBlock>
-            • Congratulations of the jury.
+            • {<LeftHighlight>Congratulations</LeftHighlight>} of the jury.
           </LeftEducationContentBlock>
 
           <LeftEducationTitleBlock
@@ -153,17 +190,24 @@ export function Home() {
                 the entire
                 product lifecycle from ideation to deployment. Although the
                 company
-                closed, it was a transformative experience that deepened my
-                passion
-                for innovation and strategic execution which I'm keen to bring
+                closed, it was a transformative experience that deepened my {
+                <RightHighlight header={true}>
+                  passion for innovation
+                </RightHighlight>
+                } and strategic execution which I'm keen to bring
                 to
                 my next role.
               </div>
-              My diverse background—from civil engineer
+              My {<RightHighlight header={true}>
+                diverse background
+              </RightHighlight>}—from civil engineer
               then quantitative analyst in a professional gambling company to
-              data engineer in a saas scale-up—has equipped me with a unique
-              perspective and agility to tackle complex challenges with a
-              versatile approach.
+              data engineer in a SaaS scale-up—gives me a unique perspective
+              and agility to tackle complex challenges.
+              Naturally {<RightHighlight header={true}>
+                curious and a fast learner
+              </RightHighlight>}, I quickly adapt to new
+              technologies and problem spaces.
             </RightContentBlock>
           </div>
 
@@ -174,7 +218,8 @@ export function Home() {
             position={"Co-founder & CTO"}
             dates={"October 2023 - March 2025"}
             company={"Sypher"}
-            location={" Paris, France | Station F - Program Essec"}
+            location={"Paris, France | Station F - Program Essec"}
+            stationF={true}
           />
           <RightContentBlock indent={true} light={lightenJobDescription}>
             <div className="mb-2">
@@ -187,14 +232,18 @@ export function Home() {
             </div>
             <div className="mb-2">
               As CTO, I led all technical aspects, including:
-              <br/>• Managing the technical team (up to 4 people).
-              <br/>• Handling customer and tester interactions about technical
-              matters.
+              <br/>• {<RightHighlight>
+                Management of the technical team
+              </RightHighlight>} (up to 4 people) and recruitment.
+              <br/>• Handling customer and tester communications about technical
+              matters, BCDR and SAP.
               <br/>
               <div className="flex">
                 <div>•</div>
                 <div className="ml-1">
-                  Managing the entire product lifecycle from identifying
+                  Managing the {<RightHighlight>
+                    entire product lifecycle
+                  </RightHighlight>} from identifying
                   needs,
                   designing and planning the solution to implementing and
                   deploying
@@ -203,11 +252,12 @@ export function Home() {
               </div>
             </div>
             The technical stack used included the following:
-            <br/>• Backend & Data: Python (NumPy, Pandas, Scikit-learn,
-            FastAPI, asyncio).
-            <br/>• Front-end: React in Typescript and Nginx.
-            <br/>• Infrastructure & Databases: Ubuntu VPS with PostgreSQL and
-            MongoDB.
+            <br/>• {<RightHighlight>Backend & Data</RightHighlight>}:
+            Python (NumPy, Pandas, Scikit-learn, FastAPI, asyncio).
+            <br/>• {<RightHighlight>Front-end</RightHighlight>}: React in
+            Typescript and Nginx.
+            <br/>• {<RightHighlight>Infrastructure & Databases</RightHighlight>}
+            : Ubuntu VPS with PostgreSQL and MongoDB.
             <br/>• Other Tools: Slack, Kafka, Notion, Stripe, and APIs for
             HubSpot, Salesforce, Brevo...
           </RightContentBlock>
@@ -220,11 +270,15 @@ export function Home() {
             location={"Paris, France"}
           />
           <RightContentBlock indent={true} light={lightenJobDescription}>
-            • Redeploying the cloud infrastructure with Terraform
+            • Redeploying the {<RightHighlight>
+              cloud infrastructure with Terraform
+            </RightHighlight>}
+            <br/>• Implementing new data pipelines on the {<RightHighlight>
+              AWS infrastructure
+            </RightHighlight>} with S3, Glue and Athena.
             <br/>• Adding data collection from external sources using AWS
             Appflow and Fivetran.
-            <br/>• Implementing new data pipelines on the AWS infrastructure
-            with S3, Glue and Athena.
+
             <br/>• creating reporting dashboards with Quicksight.
           </RightContentBlock>
 
@@ -239,19 +293,22 @@ export function Home() {
             <div className="flex">
               <div>•</div>
               <div className="ml-1">
-                Improving our sports betting strategies and
-                models’ performance, to maximise our strategy profit and limit
+                {<RightHighlight>
+                  Improving our strategies and models’ performance
+                </RightHighlight>} in sports betting , to maximise our profit and limit
                 competitors' available space.
               </div>
             </div>
             • Managing my team’s highest value product: £2m annual
             profits.
             <br/>• Using Python and Kotlin to implement the technical aspects
-            of the gambling process
+            of the gambling process.
             <div className="flex">
               <div>•</div>
               <div className="ml-1">
-                Analysis and monitoring of performance, reporting and
+                {<RightHighlight>
+                  Analysis and monitoring of performance
+                </RightHighlight>}, reporting and
                 decision-making by using data pipelines to collect, clean,
                 process, visualise and output data (including time series,
                 scraping, APIs, writing tests).

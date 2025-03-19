@@ -19,6 +19,8 @@
 .secondary-font { color: var(--secondary-color); }
 .secondary-border { border-color: var(--secondary-color); }
 
+.dark-secondary-font { color: #ffddc0; }
+
 .basic-font { color: var(--font-normal-color);}
 
 .grid-golden-right {@apply grid grid-cols-[38%_62%]}
