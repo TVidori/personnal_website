@@ -7,7 +7,7 @@ export function LeftTitleBlock({text}: { text: string }) {
       font-subtitle
     ">
       {text}
-      <div className="pb-0.5 border-b-2 secondary-border w-1/2"></div>
+      <div className="pb-[1px] border-b-2 secondary-border w-1/2"></div>
     </div>
   )
 }
@@ -59,7 +59,7 @@ export function LeftHighlight(
 export function RightTitleBlock({text}: { text: string }) {
   return (
     <div className="
-      primary-font text-xl mt-1 pb-1 mb-1 border-b-2 primary-border
+      primary-font text-xl mt-1 pb-[1px] mb-[6px] border-b-2 primary-border
       font-subtitle
     ">
       {text}

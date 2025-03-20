@@ -129,11 +129,21 @@ export function Home() {
           <LeftContentBlock>
             <div className={contactDivStyle}>
               <span className="mr-1">Languages: </span>
-              {<LeftHighlight>Python, Typescript</LeftHighlight>}, Kotlin
+              <span className="flex flex-wrap">
+                <span className="mr-1">
+                  {<LeftHighlight>Python, Typescript,</LeftHighlight>}
+                </span>
+                Kotlin
+              </span>
             </div>
             <div className={contactDivStyle}>
               <span className="mr-1">Frameworks: </span>
-              {<LeftHighlight>FastAPI, React</LeftHighlight>}, Django
+              <span className="flex flex-wrap">
+                <span className="mr-1">
+                  {<LeftHighlight>FastAPI, React,</LeftHighlight>}
+                </span>
+                Django
+              </span>
             </div>
             <div className={contactDivStyle}>
               <span className="mr-1">Databases: </span>
@@ -141,8 +151,13 @@ export function Home() {
             </div>
             <div className={contactDivStyle}>
               <span className="mr-1">Cloud: </span>
+              <span className="flex flex-wrap">
+                <span className="mr-1">
+                <span className="mr-1">
               {<LeftHighlight>AWS</LeftHighlight>}
-              <span className="ml-1">(S3, Glue, Athena), Terraform</span>
+                </span>
+                (S3, Glue, Athena),</span> Terraform
+              </span>
             </div>
             <div className={contactDivStyle}>
               Other: Ubuntu Server, Nginx, Kafka
