@@ -135,8 +135,44 @@
 }
 
 
+@font-face {
+  font-family: "Tinos";
+  src: local("Tinos"), url("resources/font_tinos/Tinos-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Tinos";
+  src: local("Tinos"), url("resources/font_tinos/Tinos-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Tinos";
+  src: local("Tinos"), url("resources/font_tinos/Tinos-Italic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Tinos";
+  src: local("Tinos"), url("resources/font_tinos/Tinos-Italic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Tinos";
+  src: local("Tinos"), url("resources/font_tinos/Tinos-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
 
 /*.font-title {@apply font-titleBase tracking-wider}*/
 .font-custom {@apply font-customBase tracking-wide}
-.font-title {@apply font-titleBase font-light tracking-wide}
-.font-subtitle {@apply font-customBase font-semibold tracking-widest}
+.font-title {@apply font-sansita font-light tracking-wide}
+/*.font-subtitle {@apply font-customBase font-semibold tracking-widest}*/
+.font-subtitle {@apply font-tinos font-bold tracking-widest}
+/*.font-tinos {@apply font-tinos}*/

@@ -8,7 +8,8 @@ module.exports = {
       fontFamily: {
         // custom: ['NunitoSans', 'Helvetica', 'Arial', 'sans-serif'],
         customBase: ['Flama', 'Helvetica', 'Arial', 'sans-serif'],
-        titleBase: ['Sansita', 'Inter', 'Arial', 'sans-serif'],
+        sansita: ['Sansita', 'Inter', 'Arial', 'sans-serif'],
+        tinos: ['Tinos', 'Georgia', 'Times New Roman', 'serif'],
         // flama: ['Flama', 'Helvetica', 'Arial', 'sans-serif'],
       },
     },
